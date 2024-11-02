@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="WARN">
+
+
+    <Properties>
+        <Property name="basepath">target/test.log</Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="Console" traget="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm: ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <RollingFile name="FILE" filename="${basepath}/automation.log" filepattern="${basepath}/automation.log">
+            <!-- to add date to log file -> filepattern => "${basepath}/automation-%d{yyyy.MM.dd}.log" -->
+            <PatternLayout pattern="%d{HH:mm: ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <SizeBasedTriggeringPolicy size="500" />
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <!--here you van use multiply log levels Trace < Debug < Info < Warn < Error
+            If you don't want to generate log change the configuration change level like this level="off"> -->
+
+            <!-- <AppenderRef ref="Console"/> -->
+            <AppenderRef ref="FILE"/>
+        </Root>
+    </Loggers>
+
+
+
+</Configuration>
