@@ -12,7 +12,7 @@ public class DashboardPage extends BasePage{
         super(driver);
     }
 
-    @FindBy(name =  "username")
+    @FindBy(name = "username")
     public WebElement usernameInput;
 
     @FindBy(name = "password")

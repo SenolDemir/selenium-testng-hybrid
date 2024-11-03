@@ -4,9 +4,10 @@
 <suite name="testng automation" thread-count="3" verbose="1">
 
     <test name="login test in chrome">
-
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="tests.LoginTest"></class>
+
         </classes>
     </test>
 
