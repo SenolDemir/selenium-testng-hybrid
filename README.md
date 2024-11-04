@@ -3,6 +3,8 @@
 Testing framework developed based on POM (Page Object Model) design with Selenium and TestNG
 
 ## Data Driven Test
+Login Data created in an Excel file in both positive and negative scenarios. Test assertion built make validations according to scneario types which has defined within test data. 
+The external test data is under resources folder,  and data provider is in the same clas with test cases.
 
 ## Reporting
 

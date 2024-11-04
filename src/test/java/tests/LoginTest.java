@@ -71,8 +71,8 @@ public class LoginTest extends TestBase {
     }
 
 
-    @DataProvider(name = "loginData")  // indices = {0,3}
-    public Object[][] excelData() {
+    @DataProvider
+    public Object[][] loginData() {
 
         String path = System.getProperty("user.dir") + "/src/test/resources/testdata/loginData.xlsx";
         ExcelUtils data = new ExcelUtils(path, "Sheet 1");
@@ -80,6 +80,14 @@ public class LoginTest extends TestBase {
 
         return dataArr;
     }
+
+//
+//    @Test(dataProvider = "loginData")
+//    public void dataDrivenLoginTest(String username, String password, String result, String emp1, String emp2){
+//
+//
+//        System.out.println(username + " " + password + " " + result);
+//    }
 
 
     /*
@@ -89,18 +97,23 @@ public class LoginTest extends TestBase {
     Assertions to the both kind scenarios are created to work accordingly
      */
 
-    @Test(dataProvider = "loginData")
-    public void dataDrivenLoginTest(String username, String password, String result) {
 
+
+
+    @Test(dataProvider = "loginData")
+    public void dataDrivenLoginTest(String username, String password, String result, String emp1, String emp2) {
+
+        dashboardPage = new DashboardPage(driver);
 
         logger.info("Data Driven Login Test is started..");
+        System.out.println(username + " " + password + " " + result);
         String expectedUrl = "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index";
 
         dashboardPage.login(username, password);
         boolean target = driver.getCurrentUrl().contains(expectedUrl);
 
 
-        if (result.equalsIgnoreCase("vaild")) {
+        if (result.equalsIgnoreCase("valid")) {
 
             if (target) {
                 dashboardPage.logout();
@@ -109,7 +122,7 @@ public class LoginTest extends TestBase {
                 Assert.assertTrue(false);
             }
 
-            if (result.equalsIgnoreCase("invaild")) {
+            if (result.equalsIgnoreCase("invalid")) {
 
                 if (driver.getCurrentUrl().contains(expectedUrl)) {
                     driver.findElement(By.xpath("//a[normalize-space()='Logout']")).click();
@@ -123,7 +136,6 @@ public class LoginTest extends TestBase {
 
 
     }
-
 
 
 

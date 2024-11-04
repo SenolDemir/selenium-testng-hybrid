@@ -6,7 +6,11 @@
     <test name="login test in chrome">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="tests.LoginTest"></class>
+            <class name="tests.LoginTest">
+                <methods>
+                    <include name="dataDrivenLoginTest"/>
+                </methods>
+            </class>
 
         </classes>
     </test>
