@@ -16,6 +16,8 @@ public class TestBase {
     public WebDriver driver;
     public Logger logger;
 
+
+
     @BeforeMethod
     @Parameters("browser")
     public void setUp(String browser){
