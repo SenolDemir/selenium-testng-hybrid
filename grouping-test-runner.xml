@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="testng automation" thread-count="3" verbose="1">
+
+    <groups>
+        <run>
+            <include name="smoke"/>
+            <!--<include name="regression"/> -->
+        </run>
+    </groups>
+
+    <test name="login test in chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="tests.LoginTest"> </class>
+            <class name="tests.LoginNegativeTest"></class>
+            <class name="tests.LoginDataDrivenTest"></class>
+
+        </classes>
+    </test>
+
+
+</suite>

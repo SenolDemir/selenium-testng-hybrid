@@ -18,7 +18,7 @@ public class TestBase {
 
 
 
-    @BeforeMethod
+    @BeforeClass (groups = {"smoke", "regression"})
     @Parameters("browser")
     public void setUp(String browser){
 
@@ -41,7 +41,7 @@ public class TestBase {
 
     }
 
-    @AfterMethod
+    @AfterClass (groups = {"smoke", "regression"})
     public void tearDown(){
 
         driver.quit();
