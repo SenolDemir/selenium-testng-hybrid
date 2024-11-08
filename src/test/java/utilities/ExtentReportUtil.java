@@ -38,7 +38,9 @@ public class ExtentReportUtil implements ITestListener{
         // Create timestamp for the report
         String timeStamp= new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 
+        extentReport=new ExtentReports();
         // set the report name with timestamp
+
         setReportName = "extent-report-" + timeStamp + ".html";
 
         sparkReporter=new ExtentSparkReporter(System.getProperty("user.dir")+ "/test-output/reports/" + setReportName);
@@ -46,7 +48,7 @@ public class ExtentReportUtil implements ITestListener{
         sparkReporter.config().setReportName("OpenCRM Functional Testing");
         sparkReporter.config().setTheme(Theme.DARK);
 
-        extentReport=new ExtentReports();
+
         extentReport.attachReporter(sparkReporter);
         extentReport.setSystemInfo("Application", "OpenHRM");
         extentReport.setSystemInfo("Environment", "QA");

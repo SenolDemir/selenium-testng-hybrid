@@ -14,7 +14,7 @@ target/
 
 /target/
 /.idea/
-
+/test-output/
 
 
 ### VS Code ###
@@ -22,3 +22,4 @@ target/
 
 ### Mac OS ###
 .DS_Store
+
