@@ -11,6 +11,12 @@ To be able to run test cases in different purpose, tests are grouped in test lev
 grouingTestRunner.xml created to run in this purpose.
 
 ## Reporting
+Report generation is executed by using ExtentReport Library.
+When the test cases are run report is generated and opened in the browser automatically
+
+Mailing the report is possible within the automation. (By using Apache Common email Library)
+The email addresses  can be configured within ExtentReportUtil class under the utilties folder
+
 
 ## Logging with Apache Log4J 2
 
