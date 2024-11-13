@@ -2,7 +2,7 @@
 
 Testing framework developed based on POM (Page Object Model) design with Selenium and TestNG
 
-## Perquisites
+## Prerequisites
 
 IDE Installed (IntelliJ)  
 Java JDK Installed (Java SE 21)  
